@@ -22,7 +22,7 @@ public class Student {
     @OneToMany(
         mappedBy = "student",
         cascade = CascadeType.ALL,
-        orphanRemoval = true
+        orphanRemoval = true,fetch = FetchType.EAGER
     )
     private Set<Homework> homeworks = new HashSet<>();
 

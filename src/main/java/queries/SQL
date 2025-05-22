@@ -1,11 +1,11 @@
-create table student (
+create table if not exists student (
   id         BIGSERIAL PRIMARY KEY,
   first_name VARCHAR(255) NOT NULL,
   last_name  VARCHAR(255) NOT NULL,
   email      VARCHAR(255) NOT NULL UNIQUE
 );
 
-create table homework (
+create table if not exists homework (
   id          BIGSERIAL PRIMARY KEY,
   description TEXT     NOT NULL,
   deadline    DATE     NOT NULL,

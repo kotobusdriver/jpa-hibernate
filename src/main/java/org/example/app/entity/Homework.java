@@ -17,7 +17,7 @@ public class Homework {
     private LocalDate deadline;
     private int mark;
 
-    @ManyToOne (fetch = FetchType.LAZY)
+    @ManyToOne (fetch = FetchType.EAGER)
     @JoinColumn (name = "student_id", nullable = false)
     private Student student;
 
