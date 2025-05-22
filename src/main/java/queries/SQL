@@ -1,0 +1,18 @@
+create table student (
+  id         BIGSERIAL PRIMARY KEY,
+  first_name VARCHAR(255) NOT NULL,
+  last_name  VARCHAR(255) NOT NULL,
+  email      VARCHAR(255) NOT NULL UNIQUE
+);
+
+create table homework (
+  id          BIGSERIAL PRIMARY KEY,
+  description TEXT     NOT NULL,
+  deadline    DATE     NOT NULL,
+  mark        INTEGER  NOT NULL,
+  student_id  BIGINT   NOT NULL
+    references student(id)
+    on delete cascade
+);
+
+
